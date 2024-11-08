@@ -546,7 +546,8 @@ img {
 }
 
 
-.signup {
+.signup,
+.login {
     width: 100vw;
     height: 80vh;
     display: flex;
@@ -554,10 +555,18 @@ img {
     justify-content: center;
 }
 
-.signup .box1 {
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border: 2px solid;
     width: 60%;
     height: 80%;
+}
+
+.box1 form {
+
     display: flex;
     justify-content: center;
     align-items: center;

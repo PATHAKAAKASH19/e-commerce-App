@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { PiPantsLight } from "react-icons/pi";
 import { IoShirtOutline } from "react-icons/io5";
 import { MdSunny } from "react-icons/md";
-import "../../assets/sun.svg";
 import Container from "../../components/ui/container/Container";
 import CategorySection from "../../components/categorySection/CategorySection";
 
@@ -37,38 +36,34 @@ export default function HomePage() {
             })}
           </Container>
 
-         
           <CategorySection
             images={images}
             filterType={"trending"}
             title={"SEASONAL TREND"}
-            reactIcon={<MdSunny style={{ color: "orange", fontSize: "50px" }} />}
+            reactIcon={
+              <MdSunny style={{ color: "orange", fontSize: "50px" }} />
+            }
           />
-                
-        
+
           <CategorySection
             images={images}
             filterType={"bottomwear"}
             title={"BOTTOM WEAR"}
-            reactIcon={<PiPantsLight style={{ color: "orange", fontSize: "40px" }} />}
+            reactIcon={
+              <PiPantsLight style={{ color: "orange", fontSize: "40px" }} />
+            }
           />
 
-
-         <CategorySection
+          <CategorySection
             images={images}
             filterType={"topwear"}
             title={"TOP WEAR"}
-            reactIcon={<IoShirtOutline style={{ color: "orange", fontSize: "30px" }} />}
+            reactIcon={
+              <IoShirtOutline style={{ color: "orange", fontSize: "30px" }} />
+            }
           />
-
         </>
       ) : null}
     </Container>
-          
   );
 }
-          
-            
-
-
-

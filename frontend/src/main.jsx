@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
 import "./index.css";
-import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import ErrorPage from "./pages/errorPage/ErrorPage.jsx";
 import App from "./App.jsx";
@@ -11,11 +11,10 @@ import CartPage from "./pages/cartPage/CartPage.jsx";
 import ProductListPage from "./pages/productListPage/ProductListPage.jsx";
 import ProductPage from "./pages/productPage/ProductPage.jsx";
 
-
+import Auth from "./pages/authPage/Auth.jsx";
 import SellerPage from "./pages/sellerPage/SellerPage.jsx";
 import UserPage from "./pages/userPage/UserPage.jsx";
-import Login from "./pages/auth/Login.jsx";
-import Signup from "./pages/auth/Signup.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -50,43 +49,40 @@ const router = createBrowserRouter([
 
       {
         path: "user",
-        children: [
+        children: [ 
           {
-            path: "login",
-            element: <Login />,
+            path: ":auth",
+            element: <Auth></Auth>
           },
 
           {
-            path: "signup",
-            element: <Signup />,
+            path:"DashBoard",
+            element:<UserPage/>
           },
+
         ],
       },
+
+
 
       {
         path:"seller",
         children:[
           {
-            path:"login",
-            element:<Login></Login>
+            path:":auth",
+            element:<Auth></Auth>
           },
 
           {
-            path:"signup",
-            element:<Signup></Signup>
+            path:"sellerDas",
+            element:<SellerPage/>
           }
         ]
       },
 
-      {
-        path:"user",
-        element:<UserPage/>
-      },
+     
 
-      {
-        path:"seller",
-        element:<SellerPage/>
-      }
+     
     ],
   },
 ]);
