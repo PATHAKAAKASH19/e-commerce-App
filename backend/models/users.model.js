@@ -22,7 +22,25 @@ const userSchema = mongoose.Schema({
         type: String,
         enum: ["customer", "admin"],
         default: "customer"
+    },
+
+    name: {
+        type:String,
+        
+    }, 
+
+    phone: {
+        type: String, 
+        required: true, 
+        unique: true, 
+        match: [/^\+?[1-9]\d{1,14}$/, 'Please enter a valid phone number']
     }
+
+
+
+
+
+    
 
 
 }, {timestamps: true})

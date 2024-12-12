@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import InputBox from "../ui/inputBox/InputBox";
 import { VscEyeClosed } from "react-icons/vsc";
 import { VscEye } from "react-icons/vsc";
+import Container from "../ui/container/Container";
 
-export default function Form({ btnTitle, formData, handleInput, handleForm }) {
+export default function Form({ btnTitle, formData, handleInput, handleForm, errors }) {
   const [show, setShow] = useState(false);
 
   const changeShow = () => {
@@ -11,6 +12,7 @@ export default function Form({ btnTitle, formData, handleInput, handleForm }) {
   };
   return (
     <form onSubmit={handleForm}>
+      <Container className={"inputBox"}>
       <label htmlFor="email">email</label>
       <InputBox
         type="text"
@@ -21,8 +23,13 @@ export default function Form({ btnTitle, formData, handleInput, handleForm }) {
         value={formData.email}
         onChange={handleInput}
       ></InputBox>
+       <h3 className="error">{errors.emailError}</h3>
+      </Container>
+      
 
-      <label htmlFor="password">password</label>
+     <Container className={"inputBox"}>
+     <label htmlFor="password">password</label>
+     <Container className={"passwordBox"}>
       <InputBox
         type={!show ? "password" : "text"}
         placeholder="enter your password"
@@ -34,10 +41,13 @@ export default function Form({ btnTitle, formData, handleInput, handleForm }) {
       ></InputBox>
 
       {!show ? (
-        <VscEye onClick={changeShow} />
+        <VscEye onClick={changeShow} style={{fontSize: "22px"}}/>
       ) : (
-        <VscEyeClosed onClick={changeShow} />
+        <VscEyeClosed onClick={changeShow} style={{fontSize: "22px"}}/>
       )}
+    </Container>
+     <h3 className="error">{errors.passwordError}</h3>
+     </Container>
       <button type="submit">{btnTitle}</button>
     </form>
   );

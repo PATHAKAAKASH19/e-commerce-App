@@ -4,6 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { MdFavoriteBorder } from "react-icons/md";
 
+
 export default function Header() {
   return (
     <div className="navbar">
@@ -40,3 +41,4 @@ export default function Header() {
     </div>
   );
 }
+

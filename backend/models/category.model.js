@@ -16,7 +16,7 @@ const categorySchema = mongoose.Schema({
 
    subCategory: {
       type:String,
-      enum:["topwear", "bottomwear", "accessories", "prefume", "footwear"]
+      enum:["topwear", "bottomwear", "accessories", "footwear", "watches"]
    },
 
    imgUrl: {

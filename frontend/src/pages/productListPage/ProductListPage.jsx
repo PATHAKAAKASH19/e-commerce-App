@@ -7,7 +7,8 @@ import Container from "../../components/ui/container/Container";
 export default function ProductListPage() {
   let { category } = useParams();
 
-  const [productsImage, setProductsImage] = useState(null);
+  const [product, setProduct] = useState(null);
+  const [filter , setFilter] = useState({})
 
   useEffect(() => {
     const fetchProductsImage = async () => {
@@ -16,9 +17,10 @@ export default function ProductListPage() {
           `http://localhost:3000/api/product/get?category=${category}`
         );
         const productsImage = await res.json();
-
+      
         if (productsImage !== null) {
-          setProductsImage(productsImage);
+          console.log(productsImage)
+          setProduct(productsImage);
         }
       } catch (error) {
         console.log("error:", error);
@@ -30,128 +32,128 @@ export default function ProductListPage() {
 
   return (
     <Container className="productList">
-      <FilterComponent className="filter"></FilterComponent>
-      {productsImage && (
+      <FilterComponent className="filter" setFilter={setFilter} filter={filter}></FilterComponent>
+      {product && (
         <Container className="product-column">
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
           <Card
-            image={productsImage}
+            image={product}
             type="productList"
-            route={`/product/${productsImage[0]._id}`}
+            route={`/product/${product[0]._id}`}
           />
         </Container>
       )}

@@ -13,8 +13,12 @@ import ProductPage from "./pages/productPage/ProductPage.jsx";
 
 import Auth from "./pages/authPage/Auth.jsx";
 import SellerPage from "./pages/sellerPage/SellerPage.jsx";
+import CreateCategory from "./components/createCategory/CreateCategory.jsx";
+import CreateProduct from "./components/createProduct/CreateProduct.jsx";
+
 import UserPage from "./pages/userPage/UserPage.jsx";
 
+import ShowProducts from "./components/showProducts/ShowProducts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,40 +53,38 @@ const router = createBrowserRouter([
 
       {
         path: "user",
-        children: [ 
+        children: [
           {
             path: ":auth",
-            element: <Auth></Auth>
+            element: <Auth></Auth>,
           },
 
           {
-            path:"DashBoard",
-            element:<UserPage/>
+            path: "dashboard",
           },
-
         ],
       },
 
-
-
       {
-        path:"seller",
-        children:[
+        path: "seller-dashboard",
+        element:<SellerPage></SellerPage>,
+        children: [
           {
-            path:":auth",
-            element:<Auth></Auth>
+            path:"create-category",
+            element:<CreateCategory></CreateCategory>
+          }
+          ,
+          {
+            path:"create-product",
+            element:<CreateProduct></CreateProduct>
           },
 
           {
-            path:"sellerDas",
-            element:<SellerPage/>
+            path:"products",
+            element:<ShowProducts></ShowProducts>
           }
         ]
       },
-
-     
-
-     
     ],
   },
 ]);
